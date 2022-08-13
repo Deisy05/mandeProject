@@ -1,8 +1,8 @@
 import pool from "../../database/keys";
 
-async function read(card_number){
+async function read(numeroT){
     try {
-        await pool.query("SELECT * FROM payment_method WHERE card_number=$1",[card_number]);
+        await pool.query("SELECT * FROM metodoDePago WHERE numeroT=$1",[numeroT]);
     } catch (error) {
         throw "Error"
     }

@@ -1,42 +1,39 @@
-// express payroll_route
 import { Router } from "express";
 const payroll_route = Router();
 
-// controllers
+
 import { factura} from "../controllers";
-const { create, eliminate, read } = factura;
+const { crear, eliminar, read } = factura;
 
 payroll_route.use((req, res, next) => {
-    console.log("Time: ", Date.now());
+    console.log("Tiempo: ", Date.now());
     next();
   });
 
-  //create payroll
 payroll_route.post("/crear", async (req, res) => {
     try {
       const {
-        price, time, description, id_worker, rating, phone, id_labor
+        precio, tiempo, descripcion, id_trabajador, rating, telefono, id_labor
       } = req.body;
-      const pay = await create(
-        price, time, description, id_worker, rating, phone, id_labor
+      const pagos = await crear(
+        precio, tiempo, descripcion, id_trabajador, rating, telefono, id_labor
       );
-      console.log(pay);
-      if (pay) {
-        res.status(201).json({ message: "Succcessful registred payroll", pay });
+      console.log(pagos);
+      if (pagos) {
+        res.status(201).json({ message: "Hecho!", pagos });
       }
     } catch {
-      res.status(400).json({ message: "Wrong arguments" });
+      res.status(400).json({ message: "Datos erroneos" });
     }
   });
 
-  //read payroll
   payroll_route.get("/read", async(req, res)=>{
     try {
         const{id} = req.body;
         read(id);
-        res.status(200).json({message: "Labor found"})
+        res.status(200).json({message: "encontrado!"})
     } catch (error) {
-        res.status(400).json({ message: "Wrong arguments" });
+        res.status(400).json({ message: "revisa los datos" });
     }
   });
 

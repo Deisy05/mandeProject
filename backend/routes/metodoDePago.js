@@ -6,30 +6,30 @@ import { metodoDePago } from "../controllers";
 const { read, crear} = metodoDePago;
 
 payment_method_route.use((req, res, next) => {
-  console.log("Time: ", Date.now());
+  console.log("Tiempo: ", Date.now());
   next();
 });
 
 
 payment_method_route.post("/crear", (req, res) => {
     try {
-        const{card_number, cvv, expiration_date, name_titular, phone} = req.body;
-        crear(card_number, cvv, expiration_date, name_titular, phone);
-        res.status(201).json({message: "Payment successfully created"})
+        const{numeroT, cvv, fechaEx, titular, telefono} = req.body;
+        crear(numeroT, cvv, fechaEx, titular, telefono);
+        res.status(201).json({message: "created"})
     } catch (error) {
-        res.status(400).json({message:"An error has occurred"});
+        res.status(400).json({message:"error"});
     }
 });
 
 
 payment_method_route.get("/id", (req, res) => {
   try {
-    const{card_number} = req.body;
-    const pay = read(card_number);
-    res.status(201).json({message: "payment found", pay})
+    const{numeroT} = req.body;
+    const pay = read(numeroT);
+    res.status(201).json({message: "found", pay})
     console.log(pay);
   } catch (error) {
-    res.status(400).json({message: "An error has occurred"});
+    res.status(400).json({message: "error"});
   }
 });
 

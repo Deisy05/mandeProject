@@ -5,7 +5,7 @@ async function validar(nombreUsuario) {
   try {
     const cliente = await (
       await pool.query(
-        "SELECT * FROM client WHERE nombreUsuario=$1 ",
+        "SELECT * FROM usuario WHERE nombreUsuario=$1 ",
         [nombreUsuario]
       )
     ).rows;

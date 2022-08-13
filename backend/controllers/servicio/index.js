@@ -1,9 +1,9 @@
-import create from "./create";
+import crear from "./crear";
 import read from "./read";
 
-const workerLabor = {
-    create,
+const servicio = {
+    crear,
     read,
 }
 
-module.exports = workerLabor;
+module.exports = servicio;

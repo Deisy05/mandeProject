@@ -1,9 +1,9 @@
-import create from "./create";
+import crear from "./crear";
 import read from "./read";
 
-const pay = {
-  create,
+const pago = {
+  crear,
   read,
 };
 
-module.exports = pay;
+module.exports = pago;

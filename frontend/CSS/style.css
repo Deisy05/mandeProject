@@ -35,16 +35,17 @@ h1{
 .intro{
   height: 100vh;
   background: #36D1DC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #5B86E57e, #36D1DC98), url(../recursos/img/portada.jpg);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #5B86E57e, #36D1DC98), url(../recursos/img/portada.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #5B86E57e, #36D1DC98), url(/recursos/img/portada.jpg);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E57e, #36D1DC98), url(/recursos/img/portada.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+  padding: 0;
 
 }
 
-.intro .contenedor{
-  padding: 0;
+.contenedor{
+  padding: 15px;
 }
 .intro__titulo{
   font-family: 'Oswald', sans-serif;
@@ -61,23 +62,70 @@ h1{
 .navegar{
   display: flex;
   justify-content: flex-end;
-  height: 70px;
+  height: 80px;
   align-items: center;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.items__navegacion{
-  color: #fff;
-  text-decoration: none;
-  margin-right: 10px;
-  padding: 10px 15px;
-  font-weight: inherit;
-  border: 1px solid #fff;
+.menuHorizontal{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+
 }
+
+.menuHorizontal > li :hover{
+  background-color: #f2f2f27e;
+}
+
+.menuHorizontal > li > a{
+
+  display: block;
+  color: #000;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px 15px;
+  margin-inline: 7px;
+  border: 1px solid #fff;
+
+}
+
+.menuVertical{
+  position:absolute;
+  display: none;
+  list-style: none;
+  width: 110px;
+  background-color: #f2f2f27e;
+  padding-left: 0;
+}
+
+
+.menuHorizontal li:hover .menuVertical{
+  display: block;
+  margin-left: 8px;
+
+  
+}
+.menuVertical >a:hover{
+  background-color: #3282E27a;
+  
+}
+
+
+.menuVertical >a{
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 10px 0px 10px 8px;
+  width: 100px;
+  text-decoration: none;
+  justify-content: left;
+}
+
 
 .intro__contenedor{
   display: flex;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 80px);
   align-items: center;
   color: #fff;
 
@@ -161,6 +209,9 @@ h1{
 }
 
 .footer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
   background: #5B86E5;
   padding: 15px 0 30px 0;
   text-align: center;
@@ -171,18 +222,68 @@ h1{
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  height: 20px;
-  color: #fff;
-
-  
+  height: 40px;
+  font-weight: 700;  
 }
 
 .footer_titulo{
-  font-weight: 400;
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-weight: 200;
+  font-size: 30px;
+  margin-bottom: 35px;
 }
 
 .final{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
+
+/* Responsive*/
+
+@media screen and (max-width:800px){
+  .intro{
+    background-position: center;
+  }
+  .intro__subtitulo{
+    font-size: 2rem;
+  }
+  
+  .sobrenosotrosIMG_contenedor{
+    flex-direction: column;
+  }
+
+  .imagenservi{
+    width: 44%;
+  }
+}
+
+
+@media screen and (max-width:500px){
+  .navegar{
+    text-align: center;
+    padding: 30px 0 0 0;
+    justify-content: center;
+  }
+  .items__navegacion{
+
+    margin-right: 7px;
+    padding: 8px 10px;
+
+  }
+
+  .intro__titulo{
+    font-size: 35px;
+  }
+  .intro__subtitulo{
+    font-size: 20px;
+  }
+  .imagen_sobreNosotros{
+    margin-bottom: 60px;
+    width: 100%;
+  }
+
+  .sobrenosotrosIMG_contenedor .textos_contenedor{
+    width: 95%;
+  }
+}
+
+
+/* plantilla basada en https://alexcgdesign.com/blog/crea-una-pagina-web-desde-0-con-efecto-wave/ */

@@ -1,10 +1,10 @@
 import pool from "../../database/keys";
 
-async function read(phone) {
+async function read(telefono) {
   try {
-    await pool.query("SELECT * FROM client WHERE phone=$1", [phone]);
+    await pool.query("SELECT * FROM usuario WHERE telefono=$1", [telefono]);
   } catch (error) {
-    throw "client not found";
+    throw "no se encontró el usuario";
   }
 }
 

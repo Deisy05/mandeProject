@@ -1,11 +1,11 @@
-import create from "./create";
+import crear from "./crear";
 import read from "./read";
 
 
-const payment_method = {
-  create,
+const metodoDePago= {
+  crear,
   read,
   
 };
 
-module.exports = payment_method;
+module.exports = metodoDePago;
