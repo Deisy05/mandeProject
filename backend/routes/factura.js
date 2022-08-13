@@ -3,8 +3,8 @@ import { Router } from "express";
 const payroll_route = Router();
 
 // controllers
-import { payroll} from "../controllers";
-const { create, eliminate, read } = payroll;
+import { factura} from "../controllers";
+const { create, eliminate, read } = factura;
 
 payroll_route.use((req, res, next) => {
     console.log("Time: ", Date.now());
@@ -12,7 +12,7 @@ payroll_route.use((req, res, next) => {
   });
 
   //create payroll
-payroll_route.post("/create", async (req, res) => {
+payroll_route.post("/crear", async (req, res) => {
     try {
       const {
         price, time, description, id_worker, rating, phone, id_labor

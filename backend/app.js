@@ -11,12 +11,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.use("/client", client_route);
-app.use("/worker", worker_route);
+app.use("/cliente", client_route);
+app.use("/trabajador", worker_route);
 app.use("/labor", labor_route);
-app.use("/payment_method", payment_method_route);
-app.use("/payroll", payroll_route);
-app.use("/workerLabor", workerLabor_route);
+app.use("/metodoDePago", payment_method_route);
+app.use("/factura", payroll_route);
+app.use("/servicio", workerLabor_route);
 
 app.listen(port, () => {
   console.log(`Server on port ${port}`);

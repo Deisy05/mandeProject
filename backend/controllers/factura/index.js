@@ -1,11 +1,11 @@
-import create from "./create";
+import crear from "./crear";
 import read from "./read";
-import eliminate from "./delete";
+import eliminar from "./eliminar";
 
-const payroll = {
-  create,
+const factura = {
+  crear,
   read,
-  eliminate,
+  eliminar,
 };
 
-module.exports = payroll;
+module.exports = factura;

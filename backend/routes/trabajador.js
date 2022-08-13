@@ -2,9 +2,8 @@
 import { Router } from "express";
 const worker_route = Router();
 
-// authentication controller
-import { worker } from "../controllers";
-const { authentication, create, eliminate, update, read } = worker;
+import { trabajador} from "../controllers";
+const { authentication, create, eliminate, update, read } = trabajador;
 
 worker_route.use((req, res, next) => {
   console.log("Time: ", Date.now());
@@ -12,7 +11,6 @@ worker_route.use((req, res, next) => {
 });
 
 worker_route.get("/singup", async(req, res) => {
-  // log into application
  try {
     console.log(req.body)
     const { email, password} = req.body;
@@ -20,7 +18,7 @@ worker_route.get("/singup", async(req, res) => {
     ? res.status(200).json({ message: "Logged succesfully"})
     : res.status(400).json({ message: "Invalid credentials" });
     console.log(req.body)
-    //res.status(400).json({ message: "Invalid credentials" });
+
   } catch {
     res.status(400).json({ message: "Wrong arguments" });
   }
@@ -28,7 +26,7 @@ worker_route.get("/singup", async(req, res) => {
 
 
 worker_route.post("/singin", async(req, res) => {
-  // create new account
+
   try {
     const{name, lastName, address, username, email, password, profile_image, availability} = req.body;
     console.log("Body",req.body);
@@ -43,7 +41,7 @@ worker_route.post("/singin", async(req, res) => {
 });
 
 
-worker_route.put("/update", (req, res) => {
+worker_route.put("/actualizar", (req, res) => {
   // upgrade an existing worker
   try {
     const{email, username, id}=req.body;
@@ -58,8 +56,8 @@ worker_route.put("/update", (req, res) => {
   
 });
 
-worker_route.delete("/eliminate", async(req, res) => {
-  // delete a worker
+worker_route.delete("/eliminar", async(req, res) => {
+ 
   try {
     console.log(req.body)
     const{id} = req.body;

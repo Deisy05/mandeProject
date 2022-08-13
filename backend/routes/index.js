@@ -1,9 +1,9 @@
-import client_route from "./client";
+import client_route from "./cliente";
 import labor_route from "./labor";
-import worker_route from "./worker";
-import payroll_route from "./payroll";
-import payment_method_route from "./payment_method";
-import workerLabor_route from "./workerLabor";
+import worker_route from "./trabajador";
+import payroll_route from "./factura";
+import payment_method_route from "./metodoDePago";
+import workerLabor_route from "./labor";
 
 
 const routes = {

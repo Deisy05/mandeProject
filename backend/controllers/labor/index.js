@@ -1,13 +1,13 @@
-import create from "./create";
+import crear from "./crear";
 import read from "./read";
-import update from "./update";
-import eliminate from "./delete";
+import actualizar from "./actualizar";
+import eliminar from "./eliminar";
 
 const labor = {
-  create,
+  crear,
   read,
-  update,
-  eliminate,
+  actualizar,
+  eliminar,
 };
 
 module.exports = labor;

@@ -1,18 +1,15 @@
-// express pay_route
 import { Router } from "express";
 const pay_route = Router();
 
-// controllers
-import { payroll} from "../controllers";
-const { create, eliminate, read } = payroll;
+import { factura} from "../controllers";
+const { create, eliminate, read } = factura;
 
 pay_route.use((req, res, next) => {
     console.log("Time: ", Date.now());
     next();
   });
 
-  //create payroll
-pay_route.post("/create", async (req, res) => {
+pay_route.post("/crear", async (req, res) => {
     try {
       const {
         id, price, time, description, id_worker, raiting, phone, id_labor

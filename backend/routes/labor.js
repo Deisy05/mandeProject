@@ -1,9 +1,9 @@
-// express labor_route
+
 import { Router } from "express";
 const labor_route = Router();
 
 import { labor } from "../controllers";
-const { create, eliminate, update, read } = labor;
+const { crear, eliminar, actualizar, read } = labor;
 
 labor_route.use((req, res, next) => {
   console.log("Time: ", Date.now());
@@ -11,19 +11,19 @@ labor_route.use((req, res, next) => {
 });
 
 //create a labor
-labor_route.post("/create", (req, res) => {
+labor_route.post("/crear", (req, res) => {
   try {
     //console.log(req);
     console.log("Body", req.body);
     const{name} = req.body;
-    const labor = create(name);
+    const labor = crear(name);
     res.status(200).json({message: "Created labor", labor});
   } catch (error) {
     res.status(400).json({message: "Wrong arguments"})
   }
 });
 
-// find a labor by his id
+
 labor_route.get("/id", (req, res) => {
   try {
     const{id} = req.body;
@@ -34,20 +34,20 @@ labor_route.get("/id", (req, res) => {
   }
 });
 
-labor_route.put("/update", (req, res) => {
+labor_route.put("/actualizar", (req, res) => {
   try {
     const{name, id} = req.body;
-    update(name,id);
+    actualizar(name,id);
     res.status(200).json({message:"Updated labor"})
   } catch (error) {
     res.status(400).json({ message: "Wrong arguments" });
   }
 });
 
-labor_route.delete("/delete", (req, res) => {
+labor_route.delete("/eliminar", (req, res) => {
   try {
     const{id} = req.body;
-    eliminate(id);
+    eliminar(id);
     res.status(200).json({message: "Labor eliminated"})
   } catch (error) {
     res.status(400).json({message: "Wrong arguments"})
