@@ -1,0 +1,10 @@
+FROM node:18-alpine3.15
+
+WORKDIR /backend
+
+COPY ./yarn.lock /backend/
+COPY ./package.json /backend/
+
+RUN yarn
+
+CMD [ "yarn", "babel" ]

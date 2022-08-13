@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  database:
+    restart: always
+    build:
+      context: ./mande_db
+    environment:
+      - POSTGRES_DB=mande
+      - POSTGRES_USER=mande_dev
+      - POSTGRES_PASSWORD=pg123
+    volumes:
+      - ./mande_db/db.sql:/docker-entrypoint-initdb.d/db.sql
+      - ./mande_db/data:/var/lib/postgresql/data/
+    networks:
+      - mande_network
+
+  backend:
+    restart: always
+    depends_on:
+      - database
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/backend
+    ports:
+      - 8000:8000
+    networks:
+      - mande_network
+
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
+    networks:
+      - mande_network
+
+networks:
+  mande_network:
+    driver: bridge

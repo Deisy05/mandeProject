@@ -1,0 +1,188 @@
+@import url(//db.onlinewebfonts.com/c/1288f8500e0dc889d1620f14d73aaf8e?family=Blueberry+Regular);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@700&display=swap');
+/* 
+h1{
+  font-family: "Blueberry Regular" !important;
+}
+*/
+
+@font-face {font-family: "Blueberry Regular";
+  src: url("1288f8500e0dc889d1620f14d73aaf8e.eot"); /* IE9*/
+  src: url("1288f8500e0dc889d1620f14d73aaf8e.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("1288f8500e0dc889d1620f14d73aaf8e.woff2") format("woff2"), /* chrome、firefox */
+  url("1288f8500e0dc889d1620f14d73aaf8e.woff") format("woff"), /* chrome、firefox */
+  url("1288f8500e0dc889d1620f14d73aaf8e.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("1288f8500e0dc889d1620f14d73aaf8e.svg#Blueberry Regular") format("svg"); /* iOS 4.1- */
+}
+
+
+.contenedor{
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 80px 0;
+  max-width: 1200px;
+}
+
+.subtitulo{
+  font-family: 'Montserrat', sans-serif;
+  color: #3282E2;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.intro{
+  height: 100vh;
+  background: #36D1DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E57e, #36D1DC98), url(../recursos/img/portada.jpg);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E57e, #36D1DC98), url(../recursos/img/portada.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+
+}
+
+.intro .contenedor{
+  padding: 0;
+}
+.intro__titulo{
+  font-family: 'Oswald', sans-serif;
+  font-size: 4rem;
+  color: #000;
+}
+
+.intro__subtitulo{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.3rem;
+  color: #000;
+}
+
+.navegar{
+  display: flex;
+  justify-content: flex-end;
+  height: 70px;
+  align-items: center;
+  font-weight: 700;
+}
+
+.items__navegacion{
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px 15px;
+  font-weight: inherit;
+  border: 1px solid #fff;
+}
+
+.intro__contenedor{
+  display: flex;
+  height: calc(100vh - 70px);
+  align-items: center;
+  color: #fff;
+
+}
+
+.marco{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  
+}
+
+
+.imagen_sobreNosotros{
+  width: 420px;
+  height: 260px;
+}
+
+.sobrenosotrosIMG_contenedor{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.textos_contenedor{
+  text-align: justify;
+  font-size: 1.5rem;
+}
+
+.algunosOficios{
+  background: #f2f2f2;
+}
+
+
+.imagenes{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.imagenservi{
+  width: 24%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagenservi > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.conteservicios{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: scale(0);
+  background: hsla(221,60%,63%, 0.7);
+  transition: transform .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.conteservicios img{
+  width: 50px;
+}
+
+.conteservicios p{
+  color: #fff;
+}
+
+.imagenservi:hover .conteservicios{
+  transform: scale(1);
+}
+
+.footer{
+  background: #5B86E5;
+  padding: 15px 0 30px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.footer_contenedor{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 20px;
+  color: #fff;
+
+  
+}
+
+.footer_titulo{
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.final{
+  font-size: 1.2rem;
+}
