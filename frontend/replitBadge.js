@@ -1,4 +1,4 @@
-//tomado de https://replit.com/public/js/replit-badge.js
+//tomado y modificado de https://replit.com/public/js/replit-badge.js
 /**
  * This script adds a "Made with Replit" badge to your repl when seen in full-browser view
  */
